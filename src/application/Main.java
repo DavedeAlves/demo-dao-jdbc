@@ -7,6 +7,7 @@ import model.entites.Department;
 import model.entites.Seller;
 
 import java.util.Date;
+import java.util.List;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -20,5 +21,12 @@ public class Main {
         Seller seller = sellerDao.findById(3);
 
         System.out.println(seller);
+
+        System.out.println("=== TEST 2: seller findByDepartment ===");
+        Department department = new Department(2, null);
+        List<Seller> list = sellerDao.findByDepartment(department);
+        for(Seller obj : list){
+            System.out.println(obj);
+        }
     }
 }
